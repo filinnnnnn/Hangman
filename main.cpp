@@ -2,8 +2,6 @@
 //  main.cpp
 //  Hangman
 //
-//  Created by user on 26.09.2020.
-//  Copyright © 2020 user. All rights reserved.
 //
 
 #include <iostream>
