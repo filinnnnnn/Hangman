@@ -28,6 +28,7 @@ int main()
     words.push_back("PINGUIN");
     words.push_back("OWL");
     
+    
     std::random_shuffle(words.begin(), words.end(), myrandom); //mix the elements of vector
     
     const std::string& THE_WORD = words[0]; // secret word
@@ -91,17 +92,17 @@ char getGuess(std::string prompt, std::string opened) //getting client input and
     return guess;
 }
 
-std::string checkAndUpdateWord(std::string THE_WORD, std::string opened, std::string tooClose)
+std::string checkAndUpdateWord(std::string word, std::string opened, std::string tooClose)
 {
     std::string open = opened;
     char guess = getGuess("\nEnter your guess: ", open); // getting a guess
     
-    if (THE_WORD.find(guess) != std::string::npos) //finding guess in hidden word
+    if (word.find(guess) != std::string::npos) //finding guess in hidden word
     {
         std::cout << "\n\tThat's right! " << guess << " is in the word!";
-        for (int i = 0; i < THE_WORD.size(); i++)
+        for (int i = 0; i < word.size(); i++)
         {
-            if(THE_WORD[i] == guess) // show guessed letter in hidden word, if it finded
+            if(word[i] == guess) // show guessed letter in hidden word, if it finded
             {
                 tooClose[i] = guess;
             }
